@@ -2,10 +2,10 @@ version: '2'
 services:
 
   react-app:
-    image: react-app
+    image: basim95/react-app
     stdin_open: true
   api-server:
-    image: api-server
+    image: basim95/api-server
     ports:
       - "5000:5000"  
   nginx:
