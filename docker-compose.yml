@@ -1,0 +1,18 @@
+version: '2'
+services:
+
+  react-app:
+    image: react-app
+    stdin_open: true
+  api-server:
+    image: api-server
+    ports:
+      - "5000:5000"  
+  nginx:
+    image: nginx:stable-alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - react-app  
